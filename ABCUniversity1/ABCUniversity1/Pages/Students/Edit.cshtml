@@ -1,0 +1,163 @@
+﻿@page
+@model ABCUniversity1.Pages.Students.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+
+<div class="container">
+   @*  //2023/12/21 *@
+    <h1>Edit</h1>
+
+    <h4>Student Profile</h4>
+    <hr />
+
+  @*   <div class="col-md-4"> *@
+        <form method="post" style="padding:5px;">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="student1.ID" />
+           @*  //2023/12/07 *@
+           <input type="hidden" asp-for="student1.AddUser" />
+            <input type="hidden" asp-for="student1.AddDate" />
+            <input type="hidden" asp-for="student1.AddMach" />
+            <input type="hidden" asp-for="student1.Session" />
+            <input type="hidden" asp-for="student1.RecordId" />
+            <input type="hidden" asp-for="student1.timestamp_column" />
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-2">
+
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                </div>
+                <label asp-for="student1.UserName" class="control-label">@Model.student1.UserName</label>
+                <input type="hidden"  asp-for="student1.UserName" class="form-control" />
+                <span asp-validation-for="student1.UserName" class="text-danger"></span>
+            </div>
+
+            <br />
+            <div class="form-group">
+                <div class="row">
+                <div class="col-md-2">
+                        <label asp-for="student1.Password" class="control-label"></label>
+                    </div>
+                <div class="col-md-4">
+                        <input asp-for="student1.Password" class="form-control" />
+                        <span asp-validation-for="student1.Password" class="text-danger"></span>
+                    </div>
+                <div class="col-md-2">
+                    <label asp-for="student1.DateOfBirth" class="control-label"></label>
+                </div>
+                <div class="col-md-4">
+                    <input asp-for="student1.DateOfBirth" class="form-control" />
+                    <span asp-validation-for="student1.DateOfBirth" class="text-danger"></span>
+                </div>
+                </div>
+               
+               
+            </div>
+
+        <br />
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-2">
+                        <label asp-for="student1.FirstName" class="control-label"></label>
+                    </div>
+                    <div class="col-md-4">
+                        <input asp-for="student1.FirstName" class="form-control" />
+                        <span asp-validation-for="student1.FirstName" class="text-danger"></span>
+                    </div>
+                <div class="col-md-2">
+                    <label asp-for="student1.NIC" class="control-label"></label>
+                </div>
+                <div class="col-md-4">
+                    <input asp-for="student1.NIC" class="form-control" />
+                    <span asp-validation-for="student1.NIC" class="text-danger"></span>
+                </div>
+                </div>              
+               
+            </div>
+
+        <br />
+
+
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-2">
+                        <label asp-for="student1.LastName" class="control-label"></label>
+                    </div>
+                    <div class="col-md-4">
+                        <input asp-for="student1.LastName" class="form-control" />
+                        <span asp-validation-for="student1.LastName" class="text-danger"></span>
+                    </div>
+
+                <div class="col-md-2">
+                    <label asp-for="student1.Email" class="control-label"></label>
+                </div>
+                <div class="col-md-4">
+                    <input asp-for="student1.Email" class="form-control" />
+                    <span asp-validation-for="student1.Email" class="text-danger"></span>
+                </div>
+                </div>              
+               
+            </div>
+
+        <br />
+
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-2">
+                        <label asp-for="student1.Address" class="control-label"></label>
+                    </div>
+                    <div class="col-md-4">
+                        <input asp-for="student1.Address" class="form-control" />
+                        <span asp-validation-for="student1.Address" class="text-danger"></span>
+                    </div>
+                </div>  
+            </div>
+
+        <br />
+
+
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-2">
+                        <label asp-for="student1.ContactNo" class="control-label"></label>
+                    </div>
+                    <div class="col-md-4">
+                        <input asp-for="student1.ContactNo" class="form-control" />
+                        <span asp-validation-for="student1.ContactNo" class="text-danger"></span>
+                    </div>
+                </div>
+            </div>
+
+
+        <br />
+          
+       
+           
+         
+            <div class="form-group">
+                <div class="alert   alert-info " id="ErrorAlert" role="alert">
+                    @Model.student1.Status
+                </div>                
+                <input asp-for="student1.Status" type="hidden" class="form-control" />                
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+  @*   </div> *@
+</div>
+
+@* <div>
+    <a asp-page="./Index">Back to List</a>
+</div> *@
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

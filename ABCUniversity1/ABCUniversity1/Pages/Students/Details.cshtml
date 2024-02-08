@@ -1,0 +1,126 @@
+﻿@page
+@model ABCUniversity1.Pages.Students.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+<style>
+    .lblColour{
+        color:dodgerblue;
+    }
+
+    .badge {
+        background-color:cornflowerblue;
+        color: white;
+        padding: 3px 7px;
+        text-align: center;
+        border-radius: 5px;
+    }
+</style>
+
+<div class="container">
+@* <h1>Details</h1> *@
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><b>Student</b></li>
+            <li class="breadcrumb-item active" aria-current="page">Details</li>
+        </ol>
+    </nav>
+
+<div>
+    @* <h4>student</h4> *@
+    <hr />
+
+    <dl class="row">
+
+            <div class="row">
+                <dt class="col-sm-2 lblColour">
+                    @Html.DisplayNameFor(model => model.student.UserName)&nbsp;/
+                </dt>
+                <dd class="col-sm-4">
+                    @Html.DisplayFor(model => model.student.UserName)
+                </dd>
+
+                <dt class="col-sm-2 lblColour">
+                    @Html.DisplayNameFor(model => model.student.Password)&nbsp;/
+                </dt>
+                <dd class="col-sm-4">
+                    @* @Html.DisplayFor(model => model.student.Password)  *@
+                  <label>*******</label>
+                </dd>
+            </div>
+
+
+            <div class="row">
+                <dt class="col-sm-2 lblColour">
+                    @Html.DisplayNameFor(model => model.student.FirstName)&nbsp;/
+                </dt>
+                <dd class="col-sm-4">
+                    @Html.DisplayFor(model => model.student.FirstName)
+                </dd>
+
+                <dt class="col-sm-2 lblColour">
+                    @Html.DisplayNameFor(model => model.student.LastName)&nbsp;/
+                </dt>
+                <dd class="col-sm-4">
+                    @Html.DisplayFor(model => model.student.LastName)
+                </dd>
+            </div>
+
+
+            <div class="row">
+                <dt class="col-sm-2 lblColour">
+                    @Html.DisplayNameFor(model => model.student.Address)&nbsp;/
+                </dt>
+                <dd class="col-sm-4">
+                    @Html.DisplayFor(model => model.student.Address)
+                </dd>
+                <dt class="col-sm-2 lblColour">
+                    @Html.DisplayNameFor(model => model.student.ContactNo)&nbsp;/
+                </dt>
+                <dd class="col-sm-4">
+                    @Html.DisplayFor(model => model.student.ContactNo)
+                </dd>
+
+            </div>
+
+
+            <div class="row">
+
+                <dt class="col-sm-2 lblColour">
+                    @Html.DisplayNameFor(model => model.student.DateOfBirth)&nbsp;/
+                </dt>
+                <dd class="col-sm-4">
+                    @Html.DisplayFor(model => model.student.DateOfBirth)
+                </dd>
+                <dt class="col-sm-2 lblColour">
+                    @Html.DisplayNameFor(model => model.student.NIC)&nbsp;/
+                </dt>
+                <dd class="col-sm-4">
+                    @Html.DisplayFor(model => model.student.NIC)
+                </dd>
+                <dt class="col-sm-2 lblColour">
+                    @Html.DisplayNameFor(model => model.student.Email)&nbsp;/
+                </dt>
+                <dd class="col-sm-4">
+                    @Html.DisplayFor(model => model.student.Email)
+                </dd>
+              </div>   
+              
+
+            <dt class="col-sm-2 lblColour">
+                @Html.DisplayNameFor(model => model.student.Status)
+            </dt>
+
+
+            <dd class="col-sm-4">
+            @Html.DisplayFor(model => model.student.Status,new{@class="badge"})
+        </dd>
+        
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.student?.ID">Edit</a> |
+    @* <a asp-page="./Index">Back to List</a> *@
+</div>
+</div>

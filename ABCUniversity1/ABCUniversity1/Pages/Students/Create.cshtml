@@ -1,0 +1,146 @@
+﻿@page
+@model ABCUniversity1.Pages.Students.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+<div class="container">
+
+
+
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><b>Student</b></li>
+            <li class="breadcrumb-item active" aria-current="page">Create</li>
+        </ol>
+    </nav>
+    <hr />
+<div class="row">
+   
+        @if (Model.ErrorMsg.Length > 0)
+        {
+
+            <div class="alert alert-danger" role="alert">
+                @Model.ErrorMsg
+            </div>
+
+        }
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-2">
+                        <label asp-for="student.UserName" class="control-label"></label><span style="color:red">*</span>
+                        </div>
+                        <div class="col-md-4">
+                            <input asp-for="student.UserName" class="form-control" />
+                            <span asp-validation-for="student.UserName" class="text-danger"></span>
+                        </div>
+                        <div class="col-md-2">
+                        <label asp-for="student.ContactNo" class="control-label"></label><span style="color:red">*</span>
+                        </div>
+                        <div class="col-md-4">
+                            <input asp-for="student.ContactNo" class="form-control" />
+                            <span asp-validation-for="student.ContactNo" class="text-danger"></span>
+                        </div>
+                    </div>  
+            </div>
+            <br/>
+
+            <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label asp-for="student.Password" class="control-label"></label>
+                        </div>
+                        <div class="col-md-4">
+                            <input asp-for="student.Password" class="form-control" />
+                            <span asp-validation-for="student.Password" class="text-danger"></span>
+                        </div>
+
+                    <div class="col-md-2">
+                        <label asp-for="student.DateOfBirth" class="control-label"></label>
+                    </div>
+                    <div class="col-md-4">
+                        <input asp-for="student.DateOfBirth" class="form-control" />
+                        <span asp-validation-for="student.DateOfBirth" class="text-danger"></span>
+                    </div>
+                    </div>              
+               
+            </div>
+            <br />
+
+            <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label asp-for="student.FirstName" class="control-label"></label>
+                        </div>
+                        <div class="col-md-4">
+                            <input asp-for="student.FirstName" class="form-control" />
+                            <span asp-validation-for="student.FirstName" class="text-danger"></span>
+                        </div>
+                    <div class="col-md-2">
+                        <label asp-for="student.Email" class="control-label"></label>
+                    </div>
+                    <div class="col-md-4">
+                        <input asp-for="student.Email" class="form-control" />
+                        <span asp-validation-for="student.Email" class="text-danger"></span>
+                    </div>
+                    </div>
+            </div>
+            <br />
+
+            <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label asp-for="student.LastName" class="control-label"></label>
+                        </div>
+                        <div class="col-md-4">
+                            <input asp-for="student.LastName" class="form-control" />
+                            <span asp-validation-for="student.LastName" class="text-danger"></span>
+                        </div>
+                    <div class="col-md-2">
+                        <label asp-for="student.NIC" class="control-label"></label>
+                    </div>
+                    <div class="col-md-4">
+                        <input asp-for="student.NIC" class="form-control" />
+                        <span asp-validation-for="student.NIC" class="text-danger"></span>
+                    </div>
+                    </div>  
+            </div>
+            <br />
+
+            <div class="form-group">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <label asp-for="student.Address" class="control-label"></label>
+                        </div>
+                        <div class="col-md-4">
+                            <input asp-for="student.Address" class="form-control" />
+                            <span asp-validation-for="student.Address" class="text-danger"></span>
+                        </div>
+                    </div>              
+               
+            </div>
+            <br />
+        
+            <div class="form-group">
+                <div class="col-md-2">
+                    <input type="submit" value="Create" class="btn btn-primary" />
+                </div>
+                <div class="col-md-4">
+                    <a asp-page="/UserLogin">Back</a>
+                </div>
+               
+            </div>
+        </form>
+  
+</div>
+
+<div>
+  
+</div>
+</div>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
